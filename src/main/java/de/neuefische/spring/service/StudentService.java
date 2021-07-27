@@ -8,6 +8,9 @@ import java.util.List;
 @Service
 public interface StudentService {
     List<Student> getStudents();
+
+    Student getStudent(String name);
+
 }
 
 

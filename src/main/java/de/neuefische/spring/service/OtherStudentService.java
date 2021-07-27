@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("other")
-public class OtherStudentService implements StudentService {
+public abstract class OtherStudentService implements StudentService {
 
     public List<Student> getStudents() {
         return List.of(

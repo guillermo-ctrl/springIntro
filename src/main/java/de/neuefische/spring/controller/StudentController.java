@@ -11,12 +11,17 @@ import java.util.List;
 @RequestMapping("/student")
 
 public class StudentController {
-    @Resource(name = "other")
+    @Resource(name = "default")
     private StudentService studentService;
 
-    @GetMapping("/student")
+    @GetMapping
     public List<Student> getStudentList() {
         return this.studentService.getStudents();
+    }
+
+    @GetMapping("/{name}")
+    public Student getStudent(@PathVariable String name) {
+        return studentService.getStudent(name);
     }
 
 }

@@ -2,21 +2,20 @@ package de.neuefische.spring.service;
 
 import de.neuefische.spring.model.Student;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpRequest;
+import java.util.ArrayList;
 import java.util.List;
 @Service("default")
 public class DefaultStudentService implements StudentService {
 
+    private List <Student> students = new ArrayList<>();
+
     public List<Student> getStudents() {
-        return List.of(
-                new Student("Klaus", "123"),
-                new Student("Maria", "234")
-        );
+        students.add(new Student("Klaus", "123"));
+        students.add(new Student("Maria", "234"));
+        return students;
     }
 
     @Override
@@ -28,5 +27,10 @@ public class DefaultStudentService implements StudentService {
             }
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
+    @Override
+    public void addStudent(Student student) {
+        students.add(student);
     }
 }

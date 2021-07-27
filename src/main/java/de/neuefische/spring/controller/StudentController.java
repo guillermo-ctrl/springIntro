@@ -24,4 +24,11 @@ public class StudentController {
         return studentService.getStudent(name);
     }
 
+    @PutMapping
+    public void putStudent(@RequestBody Student student) {
+        studentService.addStudent(student);
+        System.out.println("hat funktioniert");
+    }
+
+
 }

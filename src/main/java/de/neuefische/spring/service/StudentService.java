@@ -11,6 +11,8 @@ public interface StudentService {
 
     Student getStudent(String name);
 
+    void addStudent(Student student);
+
 }
 
 

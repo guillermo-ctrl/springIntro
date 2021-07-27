@@ -1,12 +1,12 @@
-package de.neuefische.spring.demo;
+package de.neuefische.spring.controller;
 
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello")
 
-public class Controller {
-/*
+public class HelloController {
+
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
@@ -27,7 +27,7 @@ public class Controller {
         return String.format("Hello %s!", name);
     }
 
- */
+
 
 
 }
